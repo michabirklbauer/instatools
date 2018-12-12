@@ -35,6 +35,13 @@ Read the ReadMe [here](https://github.com/t0xic-m/instatools/blob/master/README.
 
 ## Downloads
 
+- Package:
+  - [TAR.GZ](https://github.com/t0xic-m/instatools/raw/master/Release/InstaTools-1.0.0.tar.gz)
+  - [WHL](https://github.com/t0xic-m/instatools/raw/master/Release/InstaTools-1.0.0-py3-none-any.whl)
+- Repository:
+  - [TAR.GZ](https://github.com/t0xic-m/instatools/archive/master.tar.gz)
+  - [ZIP](https://github.com/t0xic-m/instatools/archive/master.zip)
+
 ## License
 
 [MIT License](https://github.com/t0xic-m/instatools/blob/master/LICENSE.md)
