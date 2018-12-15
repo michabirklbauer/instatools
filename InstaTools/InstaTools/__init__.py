@@ -481,6 +481,8 @@ class InstaLoad:
 		json_processed = str(json_unprocessed).replace("window._sharedData = ", "").rstrip(";")
 		json_data = json.loads(json_processed)
 
+		return_code = 0
+
 		if str(json_data["entry_data"]["PostPage"][0]["graphql"]["shortcode_media"]["__typename"]) == "GraphImage":
 			image = tree.xpath('//meta[@property="og:image"]/@content')
 			try:
@@ -507,20 +509,19 @@ class InstaLoad:
 					url = str(edge["node"]["video_url"])
 					try:
 						ur.urlretrieve(url, prefix+"_"+(url.split("/")[-1].split("?")[0]))
-						return 0
 					except:
 						error_msg = "Error in link: " + insta_url
 						print(error_msg)
-						return 1
+						return_code = 1
 				else:
 					url = str(edge["node"]["display_url"])
 					try:
 						ur.urlretrieve(url, prefix+"_"+(url.split("/")[-1].split("?")[0]))
-						return 0
 					except:
 						error_msg = "Error in link: " + insta_url
 						print(error_msg)
-						return 1
+						return_code = 1
+			return return_code
 		else:
 			print("Unrecognized typename!")
 			return 1
