@@ -7,7 +7,7 @@ A small python package to access and deal with Instagram data!
 Installation:
 
 ```bash
-pip install Release/InstaTools-1.1.1.tar.gz
+pip install release/InstaTools-1.1.1.tar.gz
 ```
 
 Import and Usage:
