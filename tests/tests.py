@@ -51,3 +51,6 @@ def test_isProfileVerified():
 
 def test_getPostDetails():
     assert it.getPostDetails("https://www.instagram.com/p/B3APlTmHktH/") != -1
+
+def test_getMedia():
+    assert it.getMedia("https://www.instagram.com/p/CKFNZXEJo3R/", True) != -1
