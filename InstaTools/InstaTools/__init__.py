@@ -1,31 +1,38 @@
 #!/usr/bin/env python3
 
 # INSTATOOLS
-# 2020 (c) Micha Johannes Birklbauer
+# 2021 (c) Micha Johannes Birklbauer
 # https://github.com/t0xic-m/
 # micha.birklbauer@gmail.com
 
 from getMedia import getMedia
 import urllib.request as ur
+import traceback as tb
 import json
 
 name = "InstaTools"
-version = "1.1.0"
+version = "1.1.1"
 
 def getUserID(username):
     url = "https://www.instagram.com/" + str(username) + "/?__a=1"
 
     try:
-        data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        data = ur.urlopen(request).read()
     except Exception as e:
         print("ERROR reading page!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("ERROR loading json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -33,22 +40,30 @@ def getUserID(username):
     except Exception as e:
         print("ERROR fetching id from json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
 def getBiography(username):
     url = "https://www.instagram.com/" + str(username) + "/?__a=1"
 
     try:
-        data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        data = ur.urlopen(request).read()
     except Exception as e:
         print("ERROR reading page!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("ERROR loading json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -56,22 +71,30 @@ def getBiography(username):
     except Exception as e:
         print("ERROR fetching biography from json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
 def getFollowerCount(username):
     url = "https://www.instagram.com/" + str(username) + "/?__a=1"
 
     try:
-        data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        data = ur.urlopen(request).read()
     except Exception as e:
         print("ERROR reading page!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("ERROR loading json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -79,22 +102,30 @@ def getFollowerCount(username):
     except Exception as e:
         print("ERROR fetching follower count from json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
 def getFollowingCount(username):
     url = "https://www.instagram.com/" + str(username) + "/?__a=1"
 
     try:
-        data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        data = ur.urlopen(request).read()
     except Exception as e:
         print("ERROR reading page!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("ERROR loading json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -102,22 +133,30 @@ def getFollowingCount(username):
     except Exception as e:
         print("ERROR fetching following count from json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
 def getMediaCount(username):
     url = "https://www.instagram.com/" + str(username) + "/?__a=1"
 
     try:
-        data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        data = ur.urlopen(request).read()
     except Exception as e:
         print("ERROR reading page!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("ERROR loading json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -125,22 +164,30 @@ def getMediaCount(username):
     except Exception as e:
         print("ERROR fetching media count from json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
 def getFullName(username):
     url = "https://www.instagram.com/" + str(username) + "/?__a=1"
 
     try:
-        data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        data = ur.urlopen(request).read()
     except Exception as e:
         print("ERROR reading page!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("ERROR loading json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -148,22 +195,30 @@ def getFullName(username):
     except Exception as e:
         print("ERROR fetching full name from json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
 def getProfilePic(username, download = False):
     url = "https://www.instagram.com/" + str(username) + "/?__a=1"
 
     try:
-        data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        data = ur.urlopen(request).read()
     except Exception as e:
         print("ERROR reading page!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("ERROR loading json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -171,6 +226,8 @@ def getProfilePic(username, download = False):
     except Exception as e:
         print("ERROR fetching profile picture url from json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     if download:
@@ -180,6 +237,8 @@ def getProfilePic(username, download = False):
         except Exception as e:
             print("ERROR downloading profile picture!")
             print(e)
+            print("Full error traceback:")
+            tb.print_exc()
 
     return str(profile_pic_url)
 
@@ -187,16 +246,22 @@ def getNewPost(username, download = False):
     url = "https://www.instagram.com/" + str(username) + "/?__a=1"
 
     try:
-        data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        data = ur.urlopen(request).read()
     except Exception as e:
         print("ERROR reading page!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("ERROR loading json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -204,6 +269,8 @@ def getNewPost(username, download = False):
     except Exception as e:
         print("ERROR extracting post shortcode from json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -218,22 +285,30 @@ def getNewPost(username, download = False):
     except Exception as e:
         print("ERROR retrieving post media!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
 def getNewIGTV(username, download = False):
     url = "https://www.instagram.com/" + str(username) + "/?__a=1"
 
     try:
-        data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        data = ur.urlopen(request).read()
     except Exception as e:
         print("ERROR reading page!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("ERROR loading json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -242,6 +317,8 @@ def getNewIGTV(username, download = False):
     except Exception as e:
         print("ERROR fetching data from json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     igtv_page = "https://instagram.com/p/" + str(shortcode)
@@ -257,6 +334,8 @@ def getNewIGTV(username, download = False):
     except Exception as e:
         print("ERROR retrieving IGTV media!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
 def getTagged(username):
@@ -272,16 +351,22 @@ def isProfilePrivate(username):
     url = "https://www.instagram.com/" + str(username) + "/?__a=1"
 
     try:
-        data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        data = ur.urlopen(request).read()
     except Exception as e:
         print("ERROR reading page!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("ERROR loading json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -289,22 +374,30 @@ def isProfilePrivate(username):
     except Exception as e:
         print("ERROR fetching private status from json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
 def isProfileBusiness(username):
     url = "https://www.instagram.com/" + str(username) + "/?__a=1"
 
     try:
-        data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        data = ur.urlopen(request).read()
     except Exception as e:
         print("ERROR reading page!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("ERROR loading json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -312,22 +405,30 @@ def isProfileBusiness(username):
     except Exception as e:
         print("ERROR fetching business status from json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
 def isProfileVerified(username):
     url = "https://www.instagram.com/" + str(username) + "/?__a=1"
 
     try:
-        data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        data = ur.urlopen(request).read()
     except Exception as e:
         print("ERROR reading page!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("ERROR loading json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -335,6 +436,8 @@ def isProfileVerified(username):
     except Exception as e:
         print("ERROR fetching verified status from json!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
 def getPostDetails(instagram_post_url):
@@ -343,12 +446,16 @@ def getPostDetails(instagram_post_url):
     url = "https://instagram.com/p/" + shortcode + "/?__a=1"
 
     try:
-        post_data = ur.urlopen(url).read()
+        request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+        request = ur.Request(url, headers=request_header)
+        post_data = ur.urlopen(request).read()
         post_json = json.loads(post_data)
         return [url, post_data, post_json]
     except Exception as e:
         print("ERROR fetching post!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
 def getStories(username, download = False):

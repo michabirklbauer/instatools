@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="InstaTools",
-    version="1.1.0",
+    version="1.1.1",
     author="Micha Birklbauer",
     author_email="micha.birklbauer@gmail.com",
     description="A set of functions to access the public Instagram API and retrieve basic user data.",
