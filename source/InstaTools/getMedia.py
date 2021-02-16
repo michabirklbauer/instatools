@@ -59,7 +59,7 @@ def getMedia(instagram_post_url, download = False):
                 print("Successfully extracted and downloaded image!")
             return [0, image_link]
         except Exception as e:
-            error_msg = "Error: Failed to extract image from link: " + insta_url
+            error_msg = "Error: Failed to extract image from link: " + instagram_post_url
             print(error_msg)
             print(e)
             print("Full error traceback:")
@@ -116,7 +116,7 @@ def getMedia(instagram_post_url, download = False):
                     print("Successfully extracted and downloaded image!")
                 result.append(image_link)
             except Exception as e:
-                error_msg = "Error: Failed to extract image from link: " + insta_url
+                error_msg = "Error: Failed to extract image from link: " + instagram_post_url
                 print(error_msg)
                 print(e)
                 print("Full error traceback:")
@@ -134,7 +134,7 @@ def getMedia(instagram_post_url, download = False):
             result.insert(0, 0)
             return result
         except Exception as e:
-            error_msg = "Error: Failed to extract video from link: " + insta_url
+            error_msg = "Error: Failed to extract video from link: " + instagram_post_url
             print(error_msg)
             print(e)
             print("Full error traceback:")
