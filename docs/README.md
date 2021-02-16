@@ -18,6 +18,15 @@ it.getUserID("micha_birklbauer")
 8460770171
 ````
 
+## Building from Source
+
+Manually building package from source:
+
+```bash
+cd source
+python setup.py sdist bdist_wheel
+```
+
 ## Functions
 
 - #### name
