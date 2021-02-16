@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
 # INSTATOOLS - getMedia
-# 2020 (c) Micha Johannes Birklbauer
+# 2021 (c) Micha Johannes Birklbauer
 # https://github.com/t0xic-m/
 # micha.birklbauer@gmail.com
 
 import urllib.request as ur
+import traceback as tb
 import json
 
 def getMedia(instagram_post_url, download = False):
@@ -25,6 +26,8 @@ def getMedia(instagram_post_url, download = False):
         except Exception as e:
             print("Error: Failed to extract image from display_url!")
             print(e)
+            print("Full error traceback:")
+            tb.print_exc()
             image_display = ""
         if image_display == image_src:
             image = image_display
@@ -59,6 +62,8 @@ def getMedia(instagram_post_url, download = False):
             error_msg = "Error: Failed to extract image from link: " + insta_url
             print(error_msg)
             print(e)
+            print("Full error traceback:")
+            tb.print_exc()
             return [1, image_link]
 
     def get_video(json_data, download = download, prefix = ""):
@@ -77,6 +82,8 @@ def getMedia(instagram_post_url, download = False):
         except Exception as e:
             print("Error: Failed to extract image from display_url!")
             print(e)
+            print("Full error traceback:")
+            tb.print_exc()
             image_display = ""
         if image_display == image_src:
             image = image_display
@@ -112,6 +119,8 @@ def getMedia(instagram_post_url, download = False):
                 error_msg = "Error: Failed to extract image from link: " + insta_url
                 print(error_msg)
                 print(e)
+                print("Full error traceback:")
+                tb.print_exc()
                 print("Trying to get video!")
                 result.append("no image")
         video = str(json_data["video_url"])
@@ -128,18 +137,24 @@ def getMedia(instagram_post_url, download = False):
             error_msg = "Error: Failed to extract video from link: " + insta_url
             print(error_msg)
             print(e)
+            print("Full error traceback:")
+            tb.print_exc()
             result.append(video_link)
             result.insert(0, 1)
             return result
 
     insta_url_api = str(instagram_post_url).rstrip("/") + "/?__a=1"
-    data = ur.urlopen(insta_url_api).read()
+    request_header = { "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64)" }
+    request = ur.Request(insta_url_api, headers=request_header)
+    data = ur.urlopen(request).read()
 
     try:
         json_data = json.loads(data)
     except Exception as e:
         print("Error: Failed to load json data!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -147,6 +162,8 @@ def getMedia(instagram_post_url, download = False):
     except Exception as e:
         print("ERROR extracting media type!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
 
     try:
@@ -191,4 +208,6 @@ def getMedia(instagram_post_url, download = False):
     except Exception as e:
         print("ERROR extracting media!")
         print(e)
+        print("Full error traceback:")
+        tb.print_exc()
         return -1
