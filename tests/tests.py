@@ -14,7 +14,7 @@ def test_connection():
     request = ur.Request("https://instagram.com/nasa/?__a=1", headers=request_header)
     data = ur.urlopen(request).read()
     print(data)
-    assert len(data) > 0
+    assert len(data) == -1
 
 def test_getUserID():
     time.sleep(2)
@@ -54,7 +54,7 @@ def test_getNewIGTV():
 
 def test_getTagged():
     time.sleep(2)
-    assert it.getTagged("nasa") == "https://www.instagram.com/nasa/tagged/"
+    assert it.getTagged("nasa") == "https://instagram.com/nasa/tagged/"
 
 def test_isPostPrivate():
     time.sleep(2)
