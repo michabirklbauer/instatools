@@ -2,13 +2,13 @@
 
 # INSTATOOLS - TESTS
 # 2021 (c) Micha Johannes Birklbauer
-# https://github.com/t0xic-m/
+# https://github.com/michabirklbauer/
 # micha.birklbauer@gmail.com
 
 import InstaTools as it
 
 def test_basic():
-    assert it.version == "1.1.1"
+    assert it.version == "1.1.2"
 
 # ##############################################################################
 # ##############################################################################

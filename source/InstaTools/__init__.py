@@ -2,7 +2,7 @@
 
 # INSTATOOLS
 # 2021 (c) Micha Johannes Birklbauer
-# https://github.com/t0xic-m/
+# https://github.com/michabirklbauer/
 # micha.birklbauer@gmail.com
 
 import urllib.request as ur
@@ -10,7 +10,7 @@ import traceback as tb
 import json
 
 name = "InstaTools"
-version = "1.1.1"
+version = "1.1.2"
 
 def getMedia(instagram_post_url, download = False):
 

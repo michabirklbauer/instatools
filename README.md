@@ -1,4 +1,4 @@
-# InstaTools by Micha Birklbauer
+# InstaTools
 
 A small python package to access and deal with Instagram data!
 
@@ -7,7 +7,7 @@ A small python package to access and deal with Instagram data!
 Installation:
 
 ```bash
-pip install release/InstaTools-1.1.1.tar.gz
+pip install release/InstaTools-1.1.2.tar.gz
 ```
 
 Import and Usage:
@@ -105,14 +105,13 @@ python setup.py sdist bdist_wheel
   - parameters: ```instagram_post_url``` (a valid link to an existing instagram post, type: string)
   - parameters: ```download``` (if media should be downloaded or not, type: boolean, default: False)
   - returns: ```media_links``` (a list of media links \[or -1 in case of error\], type: list of strings)
-  - Note: For downloading several posts I recommend to use [Instagram Downloader](https://github.com/t0xic-m/instagram_downloader).
+  - Note: For downloading several posts I recommend to use [**instagram_downloader**](https://github.com/michabirklbauer/instagram_downloader).
 
 ## License
 
-[MIT License](https://github.com/t0xic-m/instatools/blob/master/LICENSE.md)
+[MIT License](https://github.com/michabirklbauer/instatools/blob/master/LICENSE.md)
 
 ## Contact
 
-- Website: [Web](https://t0xic-m.github.io/web)
-- Website: [GitHub](https://t0xic-m.github.io)
-- Mail: [Contact](mailto:micha.birklbauer@gmail.com)
+- Website: [michabirklbauer.github.io](https://michabirklbauer.github.io/)
+- Mail: [micha.birklbauer@gmail.com](mailto:micha.birklbauer@gmail.com)
