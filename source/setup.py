@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="InstaTools",
-    version="1.1.1",
+    version="1.1.2",
     author="Micha Birklbauer",
     author_email="micha.birklbauer@gmail.com",
     description="A set of functions to access the public Instagram API and retrieve basic user data.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/t0xic-m/instatools",
+    url="https://github.com/michabirklbauer/instatools",
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",
