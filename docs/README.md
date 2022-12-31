@@ -2,6 +2,10 @@
 
 A small python package to access and deal with Instagram data!
 
+## WARNING
+
+**Instagram deprecated their public API and this repository will not be maintained any longer. Programs/Scripts or parts of them do not work anymore! USE AT OWN RISK!**
+
 ## Quick Start
 
 Installation:
